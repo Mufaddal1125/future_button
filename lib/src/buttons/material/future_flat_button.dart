@@ -5,44 +5,44 @@ import 'package:future_button/src/generic_future_button.dart';
 /// A Future version of the material [FlatButton].
 /// See [FlatButton] for parameter descriptions.
 class FutureFlatButton extends GenericFutureButtonWidget {
-  final Widget icon;
-  final VoidCallback onLongPress;
-  final ValueChanged<bool> onHighlightChanged;
-  final MouseCursor mouseCursor;
-  final ButtonTextTheme textTheme;
-  final Color textColor;
-  final Color disabledTextColor;
-  final Color color;
-  final Color disabledColor;
-  final Color focusColor;
-  final Color hoverColor;
-  final Color highlightColor;
-  final Color splashColor;
-  final Brightness colorBrightness;
-  final EdgeInsetsGeometry padding;
-  final VisualDensity visualDensity;
-  final ShapeBorder shape;
+  final Widget? icon;
+  final VoidCallback? onLongPress;
+  final ValueChanged<bool>? onHighlightChanged;
+  final MouseCursor? mouseCursor;
+  final ButtonTextTheme? textTheme;
+  final Color? textColor;
+  final Color? disabledTextColor;
+  final Color? color;
+  final Color? disabledColor;
+  final Color? focusColor;
+  final Color? hoverColor;
+  final Color? highlightColor;
+  final Color? splashColor;
+  final Brightness? colorBrightness;
+  final EdgeInsetsGeometry? padding;
+  final VisualDensity? visualDensity;
+  final ShapeBorder? shape;
   final Clip clipBehavior;
-  final FocusNode focusNode;
+  final FocusNode? focusNode;
   final bool autofocus;
-  final MaterialTapTargetSize materialTapTargetSize;
+  final MaterialTapTargetSize? materialTapTargetSize;
 
   /// Default [FutureFlatButton] constructor.
   /// If you want to add an icon, see [FutureFlatButton.icon].
   /// See [FlatButton] for more info.
   FutureFlatButton({
-    Key key,
-    @required FutureCallback onPressed,
-    @required Widget child,
-    Curve animationCurve,
-    Duration animationDuration,
+    Key? key,
+    required FutureCallback onPressed,
+    required Widget child,
+    Curve? animationCurve,
+    Duration? animationDuration,
     bool showResult = false,
     bool animateTransitions = true,
-    WidgetBuilder progressIndicatorBuilder,
-    WidgetBuilder successIndicatorBuilder,
-    WidgetBuilder failureIndicatorBuilder,
-    Duration resultIndicatorDuration,
-    ProgressIndicatorLocation progressIndicatorLocation,
+    WidgetBuilder? progressIndicatorBuilder,
+    WidgetBuilder? successIndicatorBuilder,
+    WidgetBuilder? failureIndicatorBuilder,
+    Duration? resultIndicatorDuration,
+    ProgressIndicatorLocation? progressIndicatorLocation,
     this.onLongPress,
     this.onHighlightChanged,
     this.mouseCursor,
@@ -82,19 +82,19 @@ class FutureFlatButton extends GenericFutureButtonWidget {
   /// A [FutureFlatButton] with an icon.
   /// See [FlatButton.icon] for more info.
   FutureFlatButton.icon({
-    Key key,
-    @required FutureCallback onPressed,
-    @required Widget label,
-    @required this.icon,
-    Curve animationCurve,
-    Duration animationDuration,
+    Key? key,
+    required FutureCallback onPressed,
+    required Widget label,
+    required this.icon,
+    Curve? animationCurve,
+    Duration? animationDuration,
     bool showResult = false,
     bool animateTransitions = true,
-    WidgetBuilder progressIndicatorBuilder,
-    WidgetBuilder successIndicatorBuilder,
-    WidgetBuilder failureIndicatorBuilder,
-    Duration resultIndicatorDuration,
-    ProgressIndicatorLocation progressIndicatorLocation,
+    WidgetBuilder? progressIndicatorBuilder,
+    WidgetBuilder? successIndicatorBuilder,
+    WidgetBuilder? failureIndicatorBuilder,
+    Duration? resultIndicatorDuration,
+    ProgressIndicatorLocation? progressIndicatorLocation,
     this.onLongPress,
     this.onHighlightChanged,
     this.mouseCursor,
@@ -138,14 +138,14 @@ class _FutureFlatButtonState
     extends GenericFutureButtonState<FutureFlatButton> {
   @override
   Widget buildButton({
-    BuildContext context,
-    Widget child,
-    VoidCallback onPressed,
+    BuildContext? context,
+    Widget? child,
+    VoidCallback? onPressed,
   }) {
     if (widget.icon != null) {
       return FlatButton.icon(
-        icon: widget.icon,
-        label: child,
+        icon: widget.icon!,
+        label: child!,
         onPressed: isEnabled ? onPressed : null,
         onLongPress: widget.onLongPress,
         onHighlightChanged: widget.onHighlightChanged,
@@ -170,7 +170,7 @@ class _FutureFlatButtonState
     }
 
     return FlatButton(
-      child: child,
+      child: child!,
       onPressed: isEnabled ? onPressed : null,
       onLongPress: widget.onLongPress,
       onHighlightChanged: widget.onHighlightChanged,

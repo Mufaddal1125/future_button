@@ -5,50 +5,50 @@ import 'package:future_button/src/generic_future_button.dart';
 /// A Future version of the material [RasiedButton].
 /// See [RaisedButton] for parameter descriptions.
 class FutureRaisedButton extends GenericFutureButtonWidget {
-  final VoidCallback onLongPress;
-  final ValueChanged<bool> onHighlightChanged;
-  final MouseCursor mouseCursor;
-  final ButtonTextTheme textTheme;
-  final Color textColor;
-  final Color disabledTextColor;
-  final Color color;
-  final Color disabledColor;
-  final Color focusColor;
-  final Color hoverColor;
-  final Color highlightColor;
-  final Color splashColor;
-  final Brightness colorBrightness;
-  final double elevation;
-  final double focusElevation;
-  final double hoverElevation;
-  final double highlightElevation;
-  final double disabledElevation;
-  final EdgeInsetsGeometry padding;
-  final VisualDensity visualDensity;
-  final ShapeBorder shape;
+  final VoidCallback? onLongPress;
+  final ValueChanged<bool>? onHighlightChanged;
+  final MouseCursor? mouseCursor;
+  final ButtonTextTheme? textTheme;
+  final Color? textColor;
+  final Color? disabledTextColor;
+  final Color? color;
+  final Color? disabledColor;
+  final Color? focusColor;
+  final Color? hoverColor;
+  final Color? highlightColor;
+  final Color? splashColor;
+  final Brightness? colorBrightness;
+  final double? elevation;
+  final double? focusElevation;
+  final double? hoverElevation;
+  final double? highlightElevation;
+  final double? disabledElevation;
+  final EdgeInsetsGeometry? padding;
+  final VisualDensity? visualDensity;
+  final ShapeBorder? shape;
   final Clip clipBehavior;
-  final FocusNode focusNode;
+  final FocusNode? focusNode;
   final bool autofocus;
-  final MaterialTapTargetSize materialTapTargetSize;
+  final MaterialTapTargetSize? materialTapTargetSize;
 
-  final Widget icon;
+  final Widget? icon;
 
   /// Default [FutureRaisedButton] constructor.
   /// If you want to add an icon, see [FutureRaisedButton.icon].
   /// See [RaisedButton] for more info.
   FutureRaisedButton({
-    Key key,
-    @required FutureCallback onPressed,
-    @required Widget child,
-    Curve animationCurve,
-    Duration animationDuration,
+    Key? key,
+    required FutureCallback onPressed,
+    required Widget child,
+    Curve? animationCurve,
+    Duration? animationDuration,
     bool showResult = false,
     bool animateTransitions = true,
-    WidgetBuilder progressIndicatorBuilder,
-    WidgetBuilder successIndicatorBuilder,
-    WidgetBuilder failureIndicatorBuilder,
-    Duration resultIndicatorDuration,
-    ProgressIndicatorLocation progressIndicatorLocation,
+    WidgetBuilder? progressIndicatorBuilder,
+    WidgetBuilder? successIndicatorBuilder,
+    WidgetBuilder? failureIndicatorBuilder,
+    Duration? resultIndicatorDuration,
+    ProgressIndicatorLocation? progressIndicatorLocation,
     this.onLongPress,
     this.onHighlightChanged,
     this.mouseCursor,
@@ -93,19 +93,19 @@ class FutureRaisedButton extends GenericFutureButtonWidget {
   /// A [FutureRaisedButton] with an icon.
   /// See [RaisedButton.icon] for more info.
   FutureRaisedButton.icon({
-    Key key,
-    @required FutureCallback onPressed,
-    @required Widget label,
-    @required this.icon,
-    Curve animationCurve,
-    Duration animationDuration,
+    Key? key,
+    required FutureCallback onPressed,
+    required Widget label,
+    required this.icon,
+    Curve? animationCurve,
+    Duration? animationDuration,
     bool showResult = false,
     bool animateTransitions = true,
-    WidgetBuilder progressIndicatorBuilder,
-    WidgetBuilder successIndicatorBuilder,
-    WidgetBuilder failureIndicatorBuilder,
-    Duration resultIndicatorDuration,
-    ProgressIndicatorLocation progressIndicatorLocation,
+    WidgetBuilder? progressIndicatorBuilder,
+    WidgetBuilder? successIndicatorBuilder,
+    WidgetBuilder? failureIndicatorBuilder,
+    Duration? resultIndicatorDuration,
+    ProgressIndicatorLocation? progressIndicatorLocation,
     this.onLongPress,
     this.onHighlightChanged,
     this.mouseCursor,
@@ -154,14 +154,14 @@ class _FutureRaisedButtonState
     extends GenericFutureButtonState<FutureRaisedButton> {
   @override
   Widget buildButton({
-    BuildContext context,
-    Widget child,
-    VoidCallback onPressed,
+    BuildContext? context,
+    Widget? child,
+    VoidCallback? onPressed,
   }) {
     if (widget.icon != null) {
       return RaisedButton.icon(
-        icon: widget.icon,
-        label: child,
+        icon: widget.icon!,
+        label: child!,
         onPressed: isEnabled ? onPressed : null,
         onLongPress: widget.onLongPress,
         onHighlightChanged: widget.onHighlightChanged,

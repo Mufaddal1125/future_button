@@ -6,37 +6,37 @@ import 'package:future_button/src/generic_future_button.dart';
 /// See [IconButton] for parameter descriptions.
 class FutureIconButton extends GenericFutureButtonWidget {
   final double iconSize;
-  final VisualDensity visualDensity;
+  final VisualDensity? visualDensity;
   final EdgeInsetsGeometry padding;
   final AlignmentGeometry alignment;
-  final double splashRadius;
-  final Color focusColor;
-  final Color hoverColor;
-  final Color color;
-  final Color splashColor;
-  final Color highlightColor;
-  final Color disabledColor;
+  final double? splashRadius;
+  final Color? focusColor;
+  final Color? hoverColor;
+  final Color? color;
+  final Color? splashColor;
+  final Color? highlightColor;
+  final Color? disabledColor;
   final MouseCursor mouseCursor;
-  final FocusNode focusNode;
+  final FocusNode? focusNode;
   final bool autofocus;
-  final String tooltip;
+  final String? tooltip;
   final bool enableFeedback;
-  final BoxConstraints constraints;
+  final BoxConstraints? constraints;
 
   /// Default [FutureIconButton] constructor.
   /// See [IconButton] for more info.
   FutureIconButton({
-    Key key,
-    @required FutureCallback onPressed,
-    @required Widget icon,
-    Curve animationCurve,
-    Duration animationDuration,
+    Key? key,
+    required FutureCallback onPressed,
+    required Widget icon,
+    Curve? animationCurve,
+    Duration? animationDuration,
     bool showResult = false,
     bool animateTransitions = true,
-    WidgetBuilder progressIndicatorBuilder,
-    WidgetBuilder successIndicatorBuilder,
-    WidgetBuilder failureIndicatorBuilder,
-    Duration resultIndicatorDuration,
+    WidgetBuilder? progressIndicatorBuilder,
+    WidgetBuilder? successIndicatorBuilder,
+    WidgetBuilder? failureIndicatorBuilder,
+    Duration? resultIndicatorDuration,
     this.iconSize = 24.0,
     this.visualDensity,
     this.padding = const EdgeInsets.all(8.0),
@@ -77,12 +77,12 @@ class _FutureIconButtonState
     extends GenericFutureButtonState<FutureIconButton> {
   @override
   Widget buildButton({
-    BuildContext context,
-    Widget child,
-    VoidCallback onPressed,
+    BuildContext? context,
+    Widget? child,
+    VoidCallback? onPressed,
   }) {
     return IconButton(
-      icon: child,
+      icon: child!,
       onPressed: isEnabled ? onPressed : null,
       iconSize: widget.iconSize,
       visualDensity: widget.visualDensity,

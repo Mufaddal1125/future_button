@@ -5,44 +5,44 @@ import 'package:future_button/src/generic_future_button.dart';
 /// A Future version of the material [OutlineButton].
 /// See [OutlineButton] for parameter descriptions.
 class FutureOutlineButton extends GenericFutureButtonWidget {
-  final Widget icon;
-  final VoidCallback onLongPress;
-  final MouseCursor mouseCursor;
-  final ButtonTextTheme textTheme;
-  final Color textColor;
-  final Color disabledTextColor;
-  final Color color;
-  final Color focusColor;
-  final Color hoverColor;
-  final Color highlightColor;
-  final Color splashColor;
-  final double highlightElevation;
-  final BorderSide borderSide;
-  final Color disabledBorderColor;
-  final Color highlightedBorderColor;
-  final EdgeInsetsGeometry padding;
-  final VisualDensity visualDensity;
-  final ShapeBorder shape;
+  final Widget? icon;
+  final VoidCallback? onLongPress;
+  final MouseCursor? mouseCursor;
+  final ButtonTextTheme? textTheme;
+  final Color? textColor;
+  final Color? disabledTextColor;
+  final Color? color;
+  final Color? focusColor;
+  final Color? hoverColor;
+  final Color? highlightColor;
+  final Color? splashColor;
+  final double? highlightElevation;
+  final BorderSide? borderSide;
+  final Color? disabledBorderColor;
+  final Color? highlightedBorderColor;
+  final EdgeInsetsGeometry? padding;
+  final VisualDensity? visualDensity;
+  final ShapeBorder? shape;
   final Clip clipBehavior;
-  final FocusNode focusNode;
+  final FocusNode? focusNode;
   final bool autofocus;
 
   /// Default [FutureOutlineButton] constructor.
   /// If you want to add an icon, see [FutureOutlineButton.icon].
   /// See [OutlineButton] for more info.
   FutureOutlineButton({
-    Key key,
-    @required FutureCallback onPressed,
-    @required Widget child,
-    Curve animationCurve,
-    Duration animationDuration,
+    Key? key,
+    required FutureCallback onPressed,
+    required Widget child,
+    Curve? animationCurve,
+    Duration? animationDuration,
     bool showResult = false,
     bool animateTransitions = true,
-    WidgetBuilder progressIndicatorBuilder,
-    WidgetBuilder successIndicatorBuilder,
-    WidgetBuilder failureIndicatorBuilder,
-    Duration resultIndicatorDuration,
-    ProgressIndicatorLocation progressIndicatorLocation,
+    WidgetBuilder? progressIndicatorBuilder,
+    WidgetBuilder? successIndicatorBuilder,
+    WidgetBuilder? failureIndicatorBuilder,
+    Duration? resultIndicatorDuration,
+    ProgressIndicatorLocation? progressIndicatorLocation,
     this.onLongPress,
     this.mouseCursor,
     this.textTheme,
@@ -82,19 +82,19 @@ class FutureOutlineButton extends GenericFutureButtonWidget {
   /// A [FutureOutlineButton] with an icon.
   /// See [OutlineButton.icon] for more info.
   FutureOutlineButton.icon({
-    Key key,
-    @required FutureCallback onPressed,
-    @required Widget label,
-    @required this.icon,
-    Curve animationCurve,
-    Duration animationDuration,
+    Key? key,
+    required FutureCallback onPressed,
+    required Widget label,
+    required this.icon,
+    Curve? animationCurve,
+    Duration? animationDuration,
     bool showResult = false,
     bool animateTransitions = true,
-    WidgetBuilder progressIndicatorBuilder,
-    WidgetBuilder successIndicatorBuilder,
-    WidgetBuilder failureIndicatorBuilder,
-    Duration resultIndicatorDuration,
-    ProgressIndicatorLocation progressIndicatorLocation,
+    WidgetBuilder? progressIndicatorBuilder,
+    WidgetBuilder? successIndicatorBuilder,
+    WidgetBuilder? failureIndicatorBuilder,
+    Duration? resultIndicatorDuration,
+    ProgressIndicatorLocation? progressIndicatorLocation,
     this.onLongPress,
     this.mouseCursor,
     this.textTheme,
@@ -138,14 +138,14 @@ class _FutureOutlineButtonState
     extends GenericFutureButtonState<FutureOutlineButton> {
   @override
   Widget buildButton({
-    BuildContext context,
-    Widget child,
-    VoidCallback onPressed,
+    BuildContext? context,
+    Widget? child,
+    VoidCallback? onPressed,
   }) {
     if (widget.icon != null) {
       return OutlineButton.icon(
-        icon: widget.icon,
-        label: child,
+        icon: widget.icon!,
+        label: child!,
         onPressed: isEnabled ? onPressed : null,
         onLongPress: widget.onLongPress,
         mouseCursor: widget.mouseCursor,

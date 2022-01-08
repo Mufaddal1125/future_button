@@ -4,10 +4,10 @@ import 'package:future_button/src/generic_future_button.dart';
 /// A Future version of [CupertinoButton].
 /// See [CupertinoButton] for parameter descriptions.
 class FutureCupertinoButton extends GenericFutureButtonWidget {
-  final EdgeInsetsGeometry padding;
-  final Color color;
+  final EdgeInsetsGeometry? padding;
+  final Color? color;
   final Color disabledColor;
-  final double minSize;
+  final double? minSize;
   final double pressedOpacity;
   final BorderRadius borderRadius;
   final bool filled;
@@ -16,18 +16,18 @@ class FutureCupertinoButton extends GenericFutureButtonWidget {
   /// If you want to make it filled, see [FutureCupertinoButton.filled].
   /// See [CupertinoButton] for more info.
   FutureCupertinoButton({
-    Key key,
-    @required FutureCallback onPressed,
-    @required Widget child,
-    Curve animationCurve,
-    Duration animationDuration,
+    Key? key,
+    required FutureCallback onPressed,
+    required Widget child,
+    Curve? animationCurve,
+    Duration? animationDuration,
     bool showResult = false,
     bool animateTransitions = true,
-    WidgetBuilder progressIndicatorBuilder,
-    WidgetBuilder successIndicatorBuilder,
-    WidgetBuilder failureIndicatorBuilder,
-    Duration resultIndicatorDuration,
-    ProgressIndicatorLocation progressIndicatorLocation,
+    WidgetBuilder? progressIndicatorBuilder,
+    WidgetBuilder? successIndicatorBuilder,
+    WidgetBuilder? failureIndicatorBuilder,
+    Duration? resultIndicatorDuration,
+    ProgressIndicatorLocation? progressIndicatorLocation,
     this.padding,
     this.color,
     this.minSize,
@@ -54,18 +54,18 @@ class FutureCupertinoButton extends GenericFutureButtonWidget {
   /// A filled [FutureCupertinoButton].
   /// See [CupertinoButton.filled] for more info.
   FutureCupertinoButton.filled({
-    Key key,
-    @required FutureCallback onPressed,
-    @required Widget child,
-    Curve animationCurve,
-    Duration animationDuration,
+    Key? key,
+    required FutureCallback onPressed,
+    required Widget child,
+    Curve? animationCurve,
+    Duration? animationDuration,
     bool showResult = false,
     bool animateTransitions = true,
-    WidgetBuilder progressIndicatorBuilder,
-    WidgetBuilder successIndicatorBuilder,
-    WidgetBuilder failureIndicatorBuilder,
-    Duration resultIndicatorDuration,
-    ProgressIndicatorLocation progressIndicatorLocation,
+    WidgetBuilder? progressIndicatorBuilder,
+    WidgetBuilder? successIndicatorBuilder,
+    WidgetBuilder? failureIndicatorBuilder,
+    Duration? resultIndicatorDuration,
+    ProgressIndicatorLocation? progressIndicatorLocation,
     this.padding,
     this.minSize,
     this.disabledColor = CupertinoColors.quaternarySystemFill,
@@ -97,13 +97,13 @@ class _FutureCupertinoButtonState
     extends GenericFutureButtonState<FutureCupertinoButton> {
   @override
   Widget buildButton({
-    BuildContext context,
-    Widget child,
-    VoidCallback onPressed,
+    BuildContext? context,
+    Widget? child,
+    VoidCallback? onPressed,
   }) {
     if (widget.filled) {
       return CupertinoButton.filled(
-        child: child,
+        child: child!,
         onPressed: isEnabled ? onPressed : null,
         padding: widget.padding,
         minSize: widget.minSize,
@@ -114,7 +114,7 @@ class _FutureCupertinoButtonState
     }
 
     return CupertinoButton(
-      child: child,
+      child: child!,
       onPressed: isEnabled ? onPressed : null,
       padding: widget.padding,
       color: widget.color,
